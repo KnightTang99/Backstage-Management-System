@@ -42,11 +42,10 @@ function loginUser() {
     url: '/api/login',
     data: $('#login_form').serialize(),
     success(res) {
-      console.log(res)
       if (res.status !== 0) return layer.msg('登陆失败!')
       layer.msg('登陆成功!')
       localStorage.setItem('token', res.token)
-      location.href = '/index.html'
+      // location.href = '/index.html'
     }
   })
 }
