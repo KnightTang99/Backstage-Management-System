@@ -15,7 +15,8 @@ body {
   align-items: center;
 }
 
-#cateForm {
+#cateForm,
+#editForm {
   padding-top: 20px;
   padding-right: 30px;
 }
