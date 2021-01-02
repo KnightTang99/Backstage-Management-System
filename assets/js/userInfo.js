@@ -29,6 +29,7 @@ $(function () {
       data: $(this).serialize(),
       success(res) {
         if (res.status !== 0) return layer.msg('修改用户信息失败！')
+        window.parent.getUserInfo()
         $('.layui-form')[0].reset()
       }
     })
