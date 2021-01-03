@@ -5,12 +5,16 @@ $(function () {
   let index = null
   $('#addBtn').on('click', function () {
     index = layer.open({
+      // 类似模态框的弹窗
       title: '添加文章分类',
       type: 1,
       area: ['500px', '250px'],
-      content: $('#addArt').html()
+      content: $('#addArt').html() // 可以利用script模板来写需要的内容，更加方便
     })
   })
+
+  // 模态框的提交事件，事件委托，因为模态框的父级是body，不能用tbody作为父级
+
   $('body').on('submit', '#cateForm', function (e) {
     e.preventDefault()
     $.ajax({
@@ -34,7 +38,7 @@ $(function () {
       area: ['500px', '250px'],
       content: $('#editArt').html()
     })
-    let id = $(this).attr('data-id')
+    let id = $(this).attr('data-id') // 获取之前设置的自定义属性
     $.ajax({
       method: 'GET',
       url: '/my/article/cates/' + id,

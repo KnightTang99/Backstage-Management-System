@@ -22,6 +22,7 @@ $(function () {
     loginUser()
   })
 })
+// 注册的函数
 function registerUser() {
   $.ajax({
     method: 'POST',
@@ -36,13 +37,13 @@ function registerUser() {
     }
   })
 }
+// 登陆的函数
 function loginUser() {
   $.ajax({
     method: 'POST',
     url: '/api/login',
-    data: $('#login_form').serialize(),
+    data: $('#login_form').serialize(), // 获取表单的信息
     success(res) {
-      console.log(res)
       if (res.status !== 0) return layer.msg('登陆失败!')
       layer.msg('登陆成功!')
       localStorage.setItem('token', res.token)

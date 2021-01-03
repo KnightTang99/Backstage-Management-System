@@ -16,9 +16,9 @@ $(function () {
     $('#file').click()
   })
   $('#file').on('change', function (e) {
-    let fileList = this.files
+    let fileList = this.files // files是DOM元素的方法，等价于e.target.files,也等价于$(this)[0]
     if (fileList.length === 0) return layer.msg('请选择上传的图片！')
-    let imgURL = URL.createObjectURL(fileList[0])
+    let imgURL = URL.createObjectURL(fileList[0]) // 将图片信息转换成地址的格式
     $image
       .cropper('destroy') // 销毁旧的裁剪区域
       .attr('src', imgURL) // 重新设置图片路径

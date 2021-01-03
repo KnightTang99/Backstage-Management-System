@@ -1,7 +1,7 @@
 $(function () {
   const layer = layui.layer
   const form = layui.form
-  let p = formateParams(location.search)
+  let p = formateParams(location.search) // 因为是点击编辑按钮，跳转到编辑页面，所以要利用id获取点击了那一项，
   function formateParams(str) {
     let r = str.split('?')[1].split('&')
     const obj = {}
@@ -18,7 +18,6 @@ $(function () {
       method: 'GET',
       url: '/my/article/' + p.id,
       success(res) {
-        console.log(res)
         if (res.status !== 0) {
           return layer.msg('获取详情失败！')
         }
