@@ -50,7 +50,6 @@ $(function () {
       method: 'GET',
       url: '/my/article/cates',
       success(res) {
-        console.log(res)
         if (res.status !== 0) {
           return layer.msg('获取文章分类失败！')
         }
@@ -85,9 +84,10 @@ $(function () {
       //数据总数，从服务端得到
     })
   }
-  $('tbody').on('click', '#deletBtn', function () {
+  $('tbody').on('click', '.deletBtn', function () {
     let id = $(this).attr('data-id')
-    let len = $(this).length
+    let len = $('.deletBtn').length
+    console.log(len)
     layer.confirm('确认删除?', { icon: 3, title: '提示' }, function (index) {
       //do something
       $.ajax({

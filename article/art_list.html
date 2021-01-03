@@ -54,10 +54,11 @@
         <td>{{$value.title}}</td>
         <td>{{$value.cate_name}}</td>
         <td>{{$value.pub_date|dataFormat}}</td>
+
         <td>{{$value.state}}</td>
         <td>
-          <button type="button" class="layui-btn layui-btn-xs">编辑</button>
-          <button type="button" class="layui-btn layui-btn-danger layui-btn-xs" id="deletBtn" data-id="{{$value.Id}}">删除</button>
+          <a href="/article/art_edit.html?id={{$value.Id}}" type="button" class="layui-btn layui-btn-xs">编辑</a>
+          <button type="button" class="layui-btn layui-btn-danger layui-btn-xs deletBtn" data-id="{{$value.Id}}">删除</button>
         </td>
       </tr>
       {{/each}}
@@ -68,6 +69,7 @@
       <option value="{{$value.Id}}">{{$value.name}}</option>
       {{/each}}
     </script>
+
     <script src="/assets/lib/layui/layui.all.js"></script>
     <script src="/assets/lib/jquery.js"></script>
     <script src="/assets/lib/template-web.js"></script>
